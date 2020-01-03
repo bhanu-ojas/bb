@@ -1,43 +1,33 @@
 
-<div class="test-container ">
-  <div class="test-header">
-      <input type="text" [(ngModel)] = "searchTerm" placeholder="search text here"  >
-      <br><br>
+<div class="container">
+  <!-- Search -->
+  <div class="my-3">
+    <input class="p-2" type="text" [(ngModel)] = "searchTerm" placeholder="Search by title..." />
+  </div>
+  <!-- Table -->
+  <ag-grid-angular 
+  style="width: 1000px; height: 700px;"
+  class="ag-theme-balham "
+  [rowData]="details|filter:searchTerm" (rowClicked)="onRowClicked($event)"  data-toggle="modal" data-target="#myModal" 
+  [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular>
 
-
-
-<ag-grid-angular 
-style="width: 1000px; height: 700px;"
-class="ag-theme-balham "
-[rowData]="details|filter:searchTerm" (rowClicked)="onRowClicked($event)"  data-toggle="modal" data-target="#myModal" 
-[columnDefs]="columnDefs"
->
-</ag-grid-angular>
-
- 
-
-
+</div>
 <!-- The Modal -->
 <div class="modal" id="myModal">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
-
-      <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Row json data</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-
-      <!-- Modal body -->
       <div class="modal-body">
-     {{Data2}}
+        {{Data | json}}
       </div>
-
-      <!-- Modal footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
-
     </div>
   </div>
 </div>

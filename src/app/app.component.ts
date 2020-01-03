@@ -7,34 +7,34 @@ import { DollService } from './doll.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'savs';
   details: any;
-  searchTerm;
-  ngOnInit(){
+  searchTerm: any;
+  Data: string;
+ 
+  constructor(private service: DollService) {
+    this.display();
+  }
+
+  ngOnInit() {
     this.display();
     setInterval(()=> this.display(),10000)
   }
+
   columnDefs = [
     {headerName: 'Title', field: 'title' },
     {headerName: 'Url', field: 'url' },
     {headerName: 'CreatedAt', field: 'created_at'},
     {headerName: 'Author', field: 'author'}
 ];
-  Data2: string;
  
-
-
-  constructor(private s: DollService) {
-
-    this.display();
-  }
   display() {
-    this.s.get().subscribe(response => {console.log(response);
-                                        this.details = response['hits'] ;
-    }); }
-
+    this.service.get().subscribe(response => {
+        console.log(response);
+        this.details = response['hits'] ;
+    }); 
+  }
     
-    onRowClicked(event){
-      this.Data2= JSON.stringify(event.node.data)
-    }
+  onRowClicked(event){
+    this.Data= event.node.data;
+  }
 }
