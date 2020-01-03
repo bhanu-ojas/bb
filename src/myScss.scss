@@ -1,0 +1,42 @@
+// $icon-color: #03a9f4;
+
+// // changes the selected checkbox check mark color
+// $accent-color: #03a9f4;
+
+// $header-height: 50px;
+// $row-height: 40px;
+// $row-border-width: 10px;
+// $hover-color: cornsilk;
+
+// $ag-range-selected-color-1: rgb(100, 235, 215);
+// $ag-range-selected-color-2: darken($ag-range-selected-color-1, 10%);
+// $ag-range-selected-color-3: darken($ag-range-selected-color-1, 20%);
+// $ag-range-selected-color-4: darken($ag-range-selected-color-1, 30%);
+
+// // @import "~ag-grid-community/src/styles/ag-grid.scss";
+// // @import "~ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+
+
+
+// .ag-theme-balham {
+//     .ag-icon {
+//         // font-awesome Free has font-weight bold
+//         font-weight: bold;
+//         &.ag-icon-checkbox-checked, &.ag-icon-checkbox-indeterminate, &.ag-icon-checkbox-unchecked {
+//             background-color: transparent;
+//             border-radius: 0;
+//             color: $icon-color;
+//         }
+//     }
+// }
+
+// // for example purposes, remove margin and padding of the grid and also removing the outline from focused items.
+// html,
+// body {
+//   margin: auto;
+//   padding: 0 ;
+//   height: 100%;
+//   *:focus {
+//     outline: none;
+//   }
+// }
